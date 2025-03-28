@@ -10,10 +10,22 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <label for=""> Nome: </label>
+                <label >Matrícula: </label>
+                <input type="number" class="form-control" id="campoMat">
+
+                <label >CPF: </label>
+                <input type="number" class="form-control" id="campoCPF">
+
+                <label >Endereço: </label>
+                <input type="number" class="form-control" id="campoEnd">
+
+                <label >Telefone: </label>
+                <input type="number" class="form-control" id="campoTel">
+
+                <label > Nome: </label>
                 <input type="text" class="form-control" id="campoNome">
 
-                <label for=""> Ano Nascimento: </label>
+                <label > Ano Nascimento: </label>
                 <input type="number" class="form-control" id="campoAno">
 
                 <button class="btn btn-primary mt-3" id="calc">Calcular</button>
@@ -22,6 +34,30 @@
                 <h1>Nome: <span id="nome"></span></h1>
                 <h2>Idade: <span id="idade"></span></h2>
                 <h2>Ano: <span id="ano"></span></h2>
+                <h2>Telefone: <span id="Telefone"></span></h2>
+                <h2>CPF :<span id="Cpf"></span></h2>
+                <h2>Endereço :<span id="ender"></span></h2>
+                <h2>Matricula: <span id="matri"></span></h2>
+                <h2>Média: <span id="medias"></span></h2>
+
+                <div class="row">
+                    <div class="col-6">
+                        <hr>
+                        <h3>Notas</h3>
+                        <label >Nota 1:</label>
+                        <input  type="number" class="form-control" id="notaUm">
+                        <label >Nota 2:</label>
+                        <input  type="number" class="form-control" id="notaDois">
+                        <label >Nota 3:</label>
+                        <input  type="number" class="form-control" id="notaTres">
+                        <label >Nota 4:</label>
+                        <input  type="number" class="form-control" id="notaQuatro">
+
+                       
+                    </div>
+                    <button class="btn btn-primary mt-3" id="btnmedia">Média</button>
+                    
+                </div>
 
 
                
@@ -30,6 +66,7 @@
     </div>
 
     <script src="./js/pessoa.js"></script>
+    <script src="./js/aluno.js"></script>
     <script src="./js/main.js"></script>
         
 </body>

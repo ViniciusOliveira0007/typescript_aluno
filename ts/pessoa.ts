@@ -1,5 +1,5 @@
 namespace empresa{
-    export class Pessoa{
+    export abstract class Pessoa{
         private _nome : string;
         private _anoNasc : number;
 
@@ -8,8 +8,7 @@ namespace empresa{
         }
 
         set nome(nome:string){
-            this._nome=nome;
-            
+            this._nome = nome;
         }
 
         get anoNasc(){
