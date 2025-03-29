@@ -1,6 +1,6 @@
 "use strict";
-var empresa;
-(function (empresa) {
+var escola;
+(function (escola) {
     class Pessoa {
         get nome() {
             return this._nome;
@@ -18,5 +18,5 @@ var empresa;
             return anoAtual - this._anoNasc;
         }
     }
-    empresa.Pessoa = Pessoa;
-})(empresa || (empresa = {}));
+    escola.Pessoa = Pessoa;
+})(escola || (escola = {}));

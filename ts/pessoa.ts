@@ -1,4 +1,4 @@
-namespace empresa{
+namespace escola{
     export abstract class Pessoa{
         private _nome : string;
         private _anoNasc : number;
