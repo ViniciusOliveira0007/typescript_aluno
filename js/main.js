@@ -15,8 +15,9 @@ var escola;
     const notaQuatro = document.getElementById("notaQuatro");
     let p;
     const botaoMedia = document.getElementById("botaoMedia");
-    calc.addEventListener("click", () => {
-        p = new escola.Aluno(parseFloat(campoMat.value), (campoCPF.value), (campoEnd.value), (campoTel.value), parseInt(campoCurso.value), parseInt(notaUm.value), parseInt(notaDois.value), parseInt(notaTres.value), (notaQuatro.value));
+    calc.addEventListener("click", (e) => {
+        e.preventDefault();
+        p = new escola.Aluno(parseFloat(campoMat.value), campoCPF.value, campoEnd.value, campoTel.value, parseFloat(notaUm.value), parseFloat(notaDois.value), parseFloat(notaTres.value), parseFloat(notaQuatro.value), campoCurso.value);
         p.nome = campoNome.value;
         p.anoNasc = parseInt(campoAno.value);
         document.getElementById("nome").textContent = p.nome;
@@ -28,10 +29,14 @@ var escola;
         document.getElementById("Cpf").textContent = p.cpf.toString();
         document.getElementById("ender").textContent = p.end.toString();
     });
-    botaoMedia.addEventListener("click", () => {
-        // alert(parseFloat(notas.value));
-        document.getElementById("medias").textContent = p.notas.toString();
-        p.Calcularmedia(parseFloat(notaUm.value));
-        // document.getElementById("medias").textContent = p.Calcularmedia.toString();
+    botaoMedia.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!p) {
+            alert("Cadastre o aluno primeiro!");
+            return;
+        }
+        p = new escola.Aluno(parseFloat(campoMat.value), campoCPF.value, campoEnd.value, campoTel.value, parseInt(notaUm.value), parseInt(notaDois.value), parseInt(notaTres.value), parseInt(notaQuatro.value), campoCurso.value);
+        const media = p.Calcularmedia();
+        document.getElementById("medias").textContent = media.toString();
     });
 })(escola || (escola = {}));

@@ -47,8 +47,8 @@ var escola;
             valorTotal = +this.nt3;
             valorTotal = +this.nt4;
         }
-        Calcularmedia(valorTotal) {
-            valorTotal = (this.nt1 + this._nt2 + this._nt3 + this._nt4) / 4;
+        Calcularmedia() {
+            return (this.nt1 + this._nt2 + this._nt3 + this._nt4) / 4;
         }
     }
     escola.Aluno = Aluno;

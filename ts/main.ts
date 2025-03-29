@@ -26,8 +26,19 @@ namespace escola{
 
     
 
-    calc.addEventListener("click", ()=>{
-    p = new Aluno(parseFloat(campoMat.value),(campoCPF.value),(campoEnd.value),(campoTel.value),parseInt(campoCurso.value),parseInt(notaUm.value),parseInt(notaDois.value),parseInt(notaTres.value),(notaQuatro.value));
+    calc.addEventListener("click", (e)=>{
+        e.preventDefault()
+    p = new Aluno(
+        parseFloat(campoMat.value),
+        campoCPF.value,
+        campoEnd.value,
+        campoTel.value,
+        parseFloat(notaUm.value),
+        parseFloat(notaDois.value),
+        parseFloat(notaTres.value),
+        parseFloat(notaQuatro.value),
+        campoCurso.value
+        );
     p.nome = campoNome.value;
     p.anoNasc = parseInt(campoAno.value);
    
@@ -49,18 +60,35 @@ namespace escola{
 
     
 
-    botaoMedia.addEventListener("click", ()=>{
-     // alert(parseFloat(notas.value));
+    botaoMedia.addEventListener("click", (e)=>{
+        e.preventDefault();
+        
       
+        if(!p) {
+            alert("Cadastre o aluno primeiro!");
+            return;
+        }
+        
+       
+        p = new Aluno(
+            parseFloat(campoMat.value),
+            campoCPF.value,
+            campoEnd.value,
+            campoTel.value,
+            parseInt(notaUm.value),
+            parseInt(notaDois.value),
+            parseInt(notaTres.value),
+            parseInt(notaQuatro.value),
+            campoCurso.value
+        );
+        
       
+        const media = p.Calcularmedia();
+        document.getElementById("medias").textContent = media.toString();
+    });
 
-      document.getElementById("medias").textContent = p.notas.toString();
-      
 
-     p.Calcularmedia(parseFloat(notaUm.value)); 
-     // document.getElementById("medias").textContent = p.Calcularmedia.toString();
-      
-    })   
+    
 
    
 

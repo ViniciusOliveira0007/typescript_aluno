@@ -9,6 +9,7 @@ namespace escola{
         private _nt4: number;
         private _cpf: string;
         private _end: string;
+        private _notas:number[];
 
         constructor(matricula:number,cpf:string,end:string,tele:string,nt1:number,nt2:number,nt3:number,nt4:number,curso:string){
             super();
@@ -72,11 +73,9 @@ namespace escola{
         }
       
 
-        public Calcularmedia(valorTotal:number){
-        
-                valorTotal = (this.nt1 + this._nt2 + this._nt3 + this._nt4)/ 4 ;
-                
-            
+      
+        public Calcularmedia(): number {
+            return (this.nt1 + this._nt2 + this._nt3 + this._nt4) / 4;
         }
 
     }
